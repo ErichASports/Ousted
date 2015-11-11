@@ -4,12 +4,17 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGO_DB_CONN_OUSTED);
+
+//routs requirements
 var routes = require('./routes/index');
 var users = require('./routes/users');
+// model requirements 
+var User = require('./models/user');
+var Spoiler = require('./models/spoiler');
 
+//variable of express requirement
 var app = express();
 
 // view engine setup
