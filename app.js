@@ -12,7 +12,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 // model requirements 
 var User = require('./models/user');
-var Spoiler = require('./models/spoiler');
+//var Spoiler = require('models/spoiler');
 
 //variable of express requirement
 var app = express();
