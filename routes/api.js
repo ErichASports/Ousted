@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var app = express();
-var User = require('./models/user');
+
+var User = require('../models/user');
 
 
 
@@ -20,8 +21,8 @@ router.get('/users', function(req, res) {
 
 
 router.get('/feeds', function(req, res) {
-  Review.find({}, function(err, reviews) {
-    res.json(reviews);
+  Review.find({}, function(err, feeds) {
+    res.json(feeds);
   });
 });  
 // apply the routes to our application with the prefix /api

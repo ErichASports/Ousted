@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var passport = require('passport');
 var Schema = mongoose.Schema;
-//var passportLocalMongoose = require('passport-local-mongoose');
+var passportLocalMongoose = require('passport-local-mongoose');
 
 var User = new Schema({
 	name: { type: String, required: true },
@@ -11,5 +11,5 @@ var User = new Schema({
 	rev_count: Number
 })
 
-//User.plugin(passportLocalMongoose);
+User.plugin(passportLocalMongoose);
 module.exports = mongoose.model('User', User);
