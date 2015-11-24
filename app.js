@@ -12,14 +12,40 @@ mongoose.connect(process.env.MONGO_DB_CONN_OUSTED);
 //routs requirements
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var comments = require('./routes/users')
 // model requirements 
 var User = require('./models/user');
-//var Spoiler = require('models/spoiler');
+var Comments = require('./models/comments');
 
 //variable of express requirement
 var app = express();
 
 
+passport.use(new LocalStrategy(
+  function(username, password, cb) {
+    console.log('First Checkpoint')
+    User.findOne({ username: username }, function(err, user) {
+      if (err) { return cb(err); }
+      if (!user) { return cb(null, false); }
+      if (user.password != password) { return cb(null, false); }
+      return cb(null, user);
+    });
+  }
+));
+  
+passport.serializeUser(function(user, cb) {
+  console.log('Second Checkpoint')
+  cb(null, user.id);
+
+});
+  
+passport.deserializeUser(function(id, cb) {
+ User.findOne({ _id: id }, function (err, user) {
+    console.log('Third Checkpoint')
+    if (err) { return cb(err); }
+    cb(null, user);
+  });
+});
 
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
@@ -51,6 +77,7 @@ app.use(passport.session());
 
 app.use('/', routes);
 app.use('/users', users);
+//app.use('/users/new', comments);
 
 
 // catch 404 and forward to error handler

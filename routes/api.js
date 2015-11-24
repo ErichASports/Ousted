@@ -20,7 +20,7 @@ router.get('/users', function(req, res) {
 });   
 
 
-router.get('/feeds', function(req, res) {
+router.get('/comments', function(req, res) {
   Review.find({}, function(err, feeds) {
     res.json(feeds);
   });

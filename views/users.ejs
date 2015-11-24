@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+       <h1 class="header-text">Ousted</h1>
+    </header>
+    <div class="main-content">
+        <!-- Page content -->
+        <p class="body-text">Tired of your favorite shows being spoiled by Facebook????</p>
+    </div>
+    
+    <form style="text-align: center" action="/users/new" method="post">
+         <fieldset>
+         	<label for="comment">Comment:</label>
+            <textarea id="comment" name="comment" placeholder="What's on your mind?"></textarea>
+            <input type="submit" value="Submit Comment" />
+         </fieldset>
+    </form>
+    <div class="col-md-3 col-sm-3 col-xs-3">
+        <div class="panel panel-default" id="live_feed_panel">
+          <div>
+            <h2 style="text-align: center" class="panel-title">Live Feed</h2>
+          </div>
+          <div class="panel panel-default col-md-4" id="guest_recent">
+          <div>
+            <h2 style="text-align: center" class="panel-title">Comments's</h2>
+          </div>
+          <div class="panel-body">
+            <ul style="text-align: center; list-style: none">
+              <li class="text">Bacon = noms</li>
+              <li class="text">John Snow worships the Seven</li>
+              <li class="text">My baby dont mess around because she loves me so</li>
+              <li class="text">and this I know fo show (clap, clap, clap)</li>
+              <li class="text">Vahlor Morgulis </li>
+              <li class="text">Who else is on team White Walkers?</li>
+              <li class="text">What's my dogs name for me?</li>
+              <li class="text">Can't believe its not butter #talkshitgetfit</li>
+              <li class="text">Poor Yegritte #Got</li>
+              <li class="text">Spoiler alert #spoilers #sorrynotsorry</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+          <div class="panel-body">
+            <ul style="text-align: center; list-style: none">
+              <div id="live">
+              </div> 
+             </ul> 
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1 col-sm-1 col-xs-1">
+      </div>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src ="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+</body>
+<footer>
+        <!-- Footer content -->
+        <p class="copyright">Copyright 2015</p>
+    </footer>
+</html>

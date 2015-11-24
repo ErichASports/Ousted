@@ -4,6 +4,8 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var User = require('../models/user');
+var Comments = require('../models/comments');
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -17,7 +19,7 @@ router.get('/login', function(req, res){
    res.render('login');
 });
   
-router.post('/login', passport.authenticate('local', { failureRedirect: '/feed' }),
+router.post('/login', passport.authenticate('local', { failureRedirect: '/login' }),
   function(req, res) {
     res.redirect('/users');
 });
