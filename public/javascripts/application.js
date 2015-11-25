@@ -35,7 +35,7 @@ for (i = 0; i < spoilers.length; i++) {
             console.log("FALSE");
         } 
     }
-}
+}`
 function updateContent() {
       var updateCheck = 3000;
       var rightNow = Date.now();

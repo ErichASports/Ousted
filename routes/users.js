@@ -3,7 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var User = require('../models/user');
-var Comments = require('../models/comments');
+var Comment = require('../models/comments');
 
 /* GET users listing. */
 // router.get('/', function(req, res, next) {
@@ -31,12 +31,12 @@ router.post('/new', function(req, res, next){
 	var user = req.user;
 	var name = user.name;
 	console.log(comment);
-	var newComments = Comment({
+	var newComment = Comment({
 		comment: comment, 
-		userName: user.name,
+		userName: name
 	});
 	console.log(newComment);
-	newComments.save(function(err){
+	newComment.save(function(err){
 		console.log("before if");
 		if (err) console.log(err);
 
